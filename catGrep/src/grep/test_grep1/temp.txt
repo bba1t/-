@@ -1,0 +1,36 @@
+/*
+int main(int argc, char **argv) {
+  regex_t regex;
+  regmatch_t pmatch[1];
+  regoff_t off, len;
+  char *patt = NULL;
+  char *str = NULL;
+  patt = (char *) malloc(strlen(argv[1]) * sizeof(argv[1][0]));
+  str = (char *) malloc(strlen(argv[2]) * sizeof(argv[2][0]));
+  strcpy(patt, argv[argc - 2]);
+  strcpy(str, argv[argc - 1]);
+  char *s = str;
+
+  if (regcomp(&regex, patt, REG_NEWLINE))
+    exit(EXIT_FAILURE);
+  puts("regcomp ended\n");
+  printf("%s\n", patt);
+
+  for (int i = 0; ; i++) {
+    puts("in cycle");
+    if (regexec(&regex, s, (sizeof(pmatch) / sizeof(pmatch[0])), pmatch, 0))
+      break;
+    puts("regexec ended");
+    
+    off = pmatch[0].rm_so + (s - str);
+    len = pmatch[0].rm_eo - pmatch[0].rm_so;
+    printf("%d:\n", i);
+    printf("off = %jd, len = %jd\n", (intmax_t) off, (intmax_t) len);
+    printf("%.*s\n", len, s + pmatch[0].rm_so);
+    s += pmatch[0].rm_eo;
+  }
+  return 0;
+}
+*/
+
+
